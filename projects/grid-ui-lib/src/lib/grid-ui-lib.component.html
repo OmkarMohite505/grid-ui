@@ -1,0 +1,22 @@
+<h1></h1>
+<table>
+  <thead>
+    <tr>
+      <ng-container *ngFor="let column of gridConfig.columnConfig">
+        <th>{{ column.title }}</th>
+      </ng-container>
+    </tr>
+  </thead>
+  <tbody>
+      <ng-container *ngFor="let data of gridConfig.rowData">
+        <tr>
+            <ng-container *ngFor="let dt of getObjectKeys(data)">
+               <ng-container>
+                <td>{{data[dt]}}</td>
+                </ng-container>
+            </ng-container>
+        </tr>
+        
+      </ng-container>
+  </tbody>
+</table>
