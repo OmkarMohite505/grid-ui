@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { GridUiLibComponent } from '../../projects/grid-ui-lib/src/public-api';
 import { GridConfig } from '../../projects/grid-ui-lib/src/lib/models/grid-config';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, GridUiLibComponent],
+  imports: [RouterOutlet, GridUiLibComponent, ProductCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -14,22 +15,45 @@ export class AppComponent {
   title = 'grid-ui';
   public gridConfig: GridConfig = {
     columnConfig: [
-      { field: 'productId', title: 'Product Id' },
       { field: 'productName', title: 'Name' },
+      { field: 'description', title: 'Description' },
       { field: 'price', title: 'Price' },
-      { field: 'quantity', title: 'Quantity' },
+      { field: 'rating', title: 'Rating' },
+      { field: 'review', title: 'Review' },
     ],
     rowData: [
-      { productId: 1, productName: 'Oil', price: 100, quantity: 10 },
-      { productId: 2, productName: 'Sugar', price: 50, quantity: 25 },
-      { productId: 3, productName: 'Rice', price: 200, quantity: 15 },
-      { productId: 4, productName: 'Wheat', price: 150, quantity: 20 },
-      { productId: 5, productName: 'Salt', price: 30, quantity: 50 },
-      { productId: 6, productName: 'Milk', price: 60, quantity: 30 },
-      { productId: 7, productName: 'Butter', price: 120, quantity: 12 },
-      { productId: 8, productName: 'Cheese', price: 250, quantity: 8 },
-      { productId: 9, productName: 'Bread', price: 40, quantity: 22 },
-      { productId: 10, productName: 'Eggs', price: 70, quantity: 18 }
+      {
+        name: 'Wireless Bluetooth Headphones',
+        description:
+          'High-quality wireless headphones with noise cancellation and long battery life.',
+        price: '$99.99',
+        rating: 4.5,
+        reviews: 150,
+      },
+      {
+        name: 'Smart Watch',
+        description:
+          'Stylish smart watch with heart rate monitor and GPS tracking.',
+        price: '$199.99',
+        rating: 4.7,
+        reviews: 200,
+      },
+      {
+        name: 'Wireless Earbuds',
+        description:
+          'Compact wireless earbuds with superior sound quality and long battery life.',
+        price: '$79.99',
+        rating: 4.3,
+        reviews: 320,
+      },
+      {
+        name: 'Portable Speaker',
+        description:
+          'Portable Bluetooth speaker with rich sound and deep bass.',
+        price: '$49.99',
+        rating: 4.6,
+        reviews: 150,
+      },
     ],
   };
 }

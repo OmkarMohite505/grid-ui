@@ -1,0 +1,14 @@
+<div class="product-cards">
+  <div *ngFor="let product of products" class="product-card">
+    <img [src]="product.image" [alt]="product.name" class="product-image" />
+    <div class="product-info">
+      <h2 class="product-name">{{ product.name }}</h2>
+      <p class="product-price">{{ product.price }}</p>
+      <p class="product-description">{{ product.description }}</p>
+      <div class="product-rating">
+        <span>Rating: {{ product.rating }}</span>
+        <span>({{ product.reviews }} reviews)</span>
+      </div>
+    </div>
+  </div>
+</div>
